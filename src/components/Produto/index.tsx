@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 
 type Props = {
   produto: ProdutoType
-
+  aoComprar: (produto: ProdutoType) => void
   favoritar: (produto: ProdutoType) => void
   estaNosFavoritos: boolean
 }
@@ -14,13 +14,10 @@ export const paraReal = (valor: number) =>
   new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
     valor
   )
-const dispacth = useDispatch()
-const ProdutoComponent = ({
-  produto,
 
-  favoritar,
-  estaNosFavoritos
-}: Props) => {
+const ProdutoComponent = ({ produto, favoritar, estaNosFavoritos }: Props) => {
+  const dispacth = useDispatch()
+
   return (
     <S.Produto>
       <S.Capa>

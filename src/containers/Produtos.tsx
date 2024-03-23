@@ -6,6 +6,7 @@ import * as S from './styles'
 type Props = {
   produtos: ProdutoType[]
   favoritos: ProdutoType[]
+
   adicionarAoCarrinho: (produto: ProdutoType) => void
   favoritar: (produto: ProdutoType) => void
 }
